@@ -1,0 +1,14 @@
+n = -50:50;
+b = [3.7 1.95] ;
+a = [1 -0.25 0.45];
+[H, w] = freqz(b, a, 512);
+subplot(1, 2, 1);
+plot(w/pi, abs(H));
+xlabel('Normalised Frequency(\times\pi)'); 
+ylabel('H(e^{j\omega})|'); 
+title('Ampitude Response');
+subplot(1, 2, 2); 
+plot(w/pi, angle(H)); 
+ylabel('Phase Response');
+xlabel('Normalised Frequency(\times\pi)'); 
+title('Phase Response');
